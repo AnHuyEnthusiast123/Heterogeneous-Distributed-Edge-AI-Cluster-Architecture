@@ -416,5 +416,3 @@ If you use this project for academic or research purposes, please cite the corre
 > University of Information Technology – Vietnam National University Ho Chi Minh City, 2026
 
 ---
-
-*This README provides a complete, structured, and technically accurate overview of the thesis project following a clean and professional format.*
