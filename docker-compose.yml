@@ -1,0 +1,308 @@
+services:
+  edge-server:
+    build:
+      context: .
+      dockerfile: edge-server/Dockerfile
+    container_name: edge-server
+    environment:
+      FILE_STORAGE_DIR: /app/files
+      SCHEDULER_MODE: ${SCHEDULER_MODE:-PSO_ACO_GA}
+    volumes:
+      - ./files:/app/files
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    networks:
+      - cluster
+
+  worker-a:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-A
+      MEMORY_LIMIT: 128MB
+      SIMULATE: "1"
+      NODE_SPEED: "0.5"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-b:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-B
+      MEMORY_LIMIT: 140MB
+      SIMULATE: "1"
+      NODE_SPEED: "0.55"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-c:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-C
+      MEMORY_LIMIT: 150MB
+      SIMULATE: "1"
+      NODE_SPEED: "0.6"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-d:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-D
+      MEMORY_LIMIT: 160MB
+      SIMULATE: "1"
+      NODE_SPEED: "0.7"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-e:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-E
+      MEMORY_LIMIT: 170MB
+      SIMULATE: "1"
+      NODE_SPEED: "0.8"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-f:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-F
+      MEMORY_LIMIT: 180MB
+      SIMULATE: "1"
+      NODE_SPEED: "0.9"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-g:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-G
+      MEMORY_LIMIT: 190MB
+      SIMULATE: "1"
+      NODE_SPEED: "1.0"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-h:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-H
+      MEMORY_LIMIT: 200MB
+      SIMULATE: "1"
+      NODE_SPEED: "1.05"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-i:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-I
+      MEMORY_LIMIT: 210MB
+      SIMULATE: "1"
+      NODE_SPEED: "1.1"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-j:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-J
+      MEMORY_LIMIT: 220MB
+      SIMULATE: "1"
+      NODE_SPEED: "1.15"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-k:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-K
+      MEMORY_LIMIT: 230MB
+      SIMULATE: "1"
+      NODE_SPEED: "1.2"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-l:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-L
+      MEMORY_LIMIT: 240MB
+      SIMULATE: "1"
+      NODE_SPEED: "1.25"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-m:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-M
+      MEMORY_LIMIT: 245MB
+      SIMULATE: "1"
+      NODE_SPEED: "1.3"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-n:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-N
+      MEMORY_LIMIT: 250MB
+      SIMULATE: "1"
+      NODE_SPEED: "1.35"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-o:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-O
+      MEMORY_LIMIT: 256MB
+      SIMULATE: "1"
+      NODE_SPEED: "1.4"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+  worker-p:
+    build:
+      context: .
+      dockerfile: milkv-node/Dockerfile
+    environment:
+      NODE_ID: milkv-P
+      MEMORY_LIMIT: 256MB
+      SIMULATE: "1"
+      NODE_SPEED: "1.45"
+      EDGE_SERVER: edge-server:8000
+      EDGE_API_BASE: http://edge-server:8081
+    depends_on:
+      - edge-server
+    command: [ "sh", "-c", "sleep 2; /app/milkv-node" ]
+    restart: unless-stopped
+    networks:
+      - cluster
+
+networks:
+  cluster:
+    driver: bridge

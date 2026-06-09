@@ -1,0 +1,218 @@
+{
+  "schema": "cluster-docker.task-config.v1",
+  "configs": [
+    {
+      "job_example": {
+        "task_type": 1,
+        "task_type_name": "drowsiness_detection",
+        "input": {
+          "input_mode": "cam",
+          "file_type": "h264",
+          "resolution": "1080p",
+          "fps": 30,
+          "duration_sec": 5
+        }
+      },
+      "derived": {
+        "complexity": 62.0,
+        "cpu_req": 32.0,
+        "mem_req": 58.0,
+        "estimated_process_time": 5.8,
+        "pre_time": 0.45,
+        "power_factor": 0.58
+      }
+    },
+    {
+      "job_example": {
+        "task_type": 2,
+        "task_type_name": "thermal_heatmap",
+        "input": {
+          "input_mode": "cam",
+          "file_type": "h264",
+          "resolution": "720p",
+          "fps": 20,
+          "duration_sec": 5
+        }
+      },
+      "derived": {
+        "complexity": 68.0,
+        "cpu_req": 38.0,
+        "mem_req": 65.0,
+        "estimated_process_time": 6.5,
+        "pre_time": 0.55,
+        "power_factor": 0.62
+      }
+    },
+    {
+      "job_example": {
+        "task_type": 3,
+        "task_type_name": "face_detection",
+        "input": {
+          "input_mode": "cam",
+          "file_type": "h264",
+          "resolution": "1080p",
+          "fps": 30,
+          "duration_sec": 5
+        }
+      },
+      "derived": {
+        "complexity": 75.0,
+        "cpu_req": 45.0,
+        "mem_req": 62.0,
+        "estimated_process_time": 6.0,
+        "pre_time": 0.65,
+        "power_factor": 0.65
+      }
+    },
+    {
+      "job_example": {
+        "task_type": 4,
+        "task_type_name": "people_counting",
+        "input": {
+          "input_mode": "cam",
+          "file_type": "h264",
+          "resolution": "720p",
+          "fps": 25,
+          "duration_sec": 5
+        }
+      },
+      "derived": {
+        "complexity": 72.0,
+        "cpu_req": 40.0,
+        "mem_req": 70.0,
+        "estimated_process_time": 7.2,
+        "pre_time": 0.50,
+        "power_factor": 0.68
+      }
+    },
+    {
+      "job_example": {
+        "task_type": 5,
+        "task_type_name": "object_tracking",
+        "input": {
+          "input_mode": "cam",
+          "file_type": "h264",
+          "resolution": "1080p",
+          "fps": 25,
+          "duration_sec": 5
+        }
+      },
+      "derived": {
+        "complexity": 88.0,
+        "cpu_req": 52.0,
+        "mem_req": 75.0,
+        "estimated_process_time": 8.1,
+        "pre_time": 0.70,
+        "power_factor": 0.72
+      }
+    },
+    {
+      "job_example": {
+        "task_type": 6,
+        "task_type_name": "license_plate_recognition",
+        "input": {
+          "input_mode": "cam",
+          "file_type": "h264",
+          "resolution": "720p",
+          "fps": 30,
+          "duration_sec": 5
+        }
+      },
+      "derived": {
+        "complexity": 82.0,
+        "cpu_req": 48.0,
+        "mem_req": 68.0,
+        "estimated_process_time": 7.8,
+        "pre_time": 0.60,
+        "power_factor": 0.70
+      }
+    },
+    {
+      "job_example": {
+        "task_type": 7,
+        "task_type_name": "gesture_recognition",
+        "input": {
+          "input_mode": "cam",
+          "file_type": "h264",
+          "resolution": "1080p",
+          "fps": 30,
+          "duration_sec": 5
+        }
+      },
+      "derived": {
+        "complexity": 79.0,
+        "cpu_req": 44.0,
+        "mem_req": 72.0,
+        "estimated_process_time": 7.0,
+        "pre_time": 0.55,
+        "power_factor": 0.67
+      }
+    },
+    {
+      "job_example": {
+        "task_type": 8,
+        "task_type_name": "anomaly_detection",
+        "input": {
+          "input_mode": "cam",
+          "file_type": "h264",
+          "resolution": "720p",
+          "fps": 20,
+          "duration_sec": 5
+        }
+      },
+      "derived": {
+        "complexity": 95.0,
+        "cpu_req": 58.0,
+        "mem_req": 80.0,
+        "estimated_process_time": 9.2,
+        "pre_time": 0.80,
+        "power_factor": 0.75
+      }
+    },
+    {
+      "job_example": {
+        "task_type": 9,
+        "task_type_name": "vehicle_counting",
+        "input": {
+          "input_mode": "cam",
+          "file_type": "h264",
+          "resolution": "1080p",
+          "fps": 25,
+          "duration_sec": 5
+        }
+      },
+      "derived": {
+        "complexity": 85.0,
+        "cpu_req": 50.0,
+        "mem_req": 74.0,
+        "estimated_process_time": 7.5,
+        "pre_time": 0.65,
+        "power_factor": 0.71
+      }
+    },
+    {
+      "job_example": {
+        "task_type": 10,
+        "task_type_name": "crowd_density_analysis",
+        "input": {
+          "input_mode": "cam",
+          "file_type": "h264",
+          "resolution": "720p",
+          "fps": 20,
+          "duration_sec": 5
+        }
+      },
+      "derived": {
+        "complexity": 92.0,
+        "cpu_req": 55.0,
+        "mem_req": 78.0,
+        "estimated_process_time": 8.8,
+        "pre_time": 0.75,
+        "power_factor": 0.74
+      }
+    }
+  ],
+  "notes": [
+    "10 task types - batchingBonus sẽ rõ rệt hơn (repeat rate ~35%), PSO_ACO_GA sẽ vượt trội hẳn các mode khác"
+  ]
+}
